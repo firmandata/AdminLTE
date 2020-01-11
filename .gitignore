@@ -7,8 +7,8 @@
 /nbproject/private/
 /node_modules/
 ad.js
-/dist/
-/bower_components/
-/package-lock.json
+dist/
+bower_components/
+package-lock.json
 TODO
 test.html
