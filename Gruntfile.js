@@ -7,7 +7,7 @@ module.exports = function (grunt) { // jshint ignore:line
     watch : {
       less : {
         // Compiles less files upon saving
-        files: ['build/less/*.less'],
+        files: ['build/less/*.less', 'build/bootstrap-less/**/*.less'],
         tasks: ['less:development', 'less:production', 'replace', 'notify:less']
       },
       js   : {
@@ -49,7 +49,8 @@ module.exports = function (grunt) { // jshint ignore:line
           // Separate plugins
           'dist/css/alt/AdminLTE-select2.css'         : 'build/less/select2.less',
           'dist/css/alt/AdminLTE-fullcalendar.css'    : 'build/less/fullcalendar.less',
-          'dist/css/alt/AdminLTE-bootstrap-social.css': 'build/less/bootstrap-social.less'
+          'dist/css/alt/AdminLTE-bootstrap-social.css': 'build/less/bootstrap-social.less',
+          'bower_components/bootstrap/dist/css/bootstrap.css': 'build/bootstrap-less/bootstrap.less'
         }
       },
       // Production compressed version
@@ -65,7 +66,8 @@ module.exports = function (grunt) { // jshint ignore:line
           // Separate plugins
           'dist/css/alt/AdminLTE-select2.min.css'         : 'build/less/select2.less',
           'dist/css/alt/AdminLTE-fullcalendar.min.css'    : 'build/less/fullcalendar.less',
-          'dist/css/alt/AdminLTE-bootstrap-social.min.css': 'build/less/bootstrap-social.less'
+          'dist/css/alt/AdminLTE-bootstrap-social.min.css': 'build/less/bootstrap-social.less',
+          'bower_components/bootstrap/dist/css/bootstrap.min.css': 'build/bootstrap-less/bootstrap.less'
         }
       },
       // Non minified skin files
