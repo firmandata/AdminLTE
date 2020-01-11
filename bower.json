@@ -56,7 +56,8 @@
     "font-awesome": "^4.7",
     "Ionicons": "ionicons#^2.0.1",
     "jquery-ui": "^1.12.1",
-    "seiyria-bootstrap-slider": "^10.6.2"
+    "seiyria-bootstrap-slider": "^10.6.2",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47"
   },
   "resolutions": {
     "jquery": "^3.4.1"

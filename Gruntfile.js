@@ -275,7 +275,7 @@ module.exports = function (grunt) { // jshint ignore:line
         options: {
           force : true
         },
-        src: ['../simo/assets/template/dist', '../simo/assets/template/components', '../simo/assets/template/plugins']
+        src: ['../kcx/assets/template/dist', '../kcx/assets/template/components', '../kcx/assets/template/plugins']
       }
     },
 
