@@ -7,7 +7,8 @@
 /nbproject/private/
 /node_modules/
 ad.js
-dist/
+dist/css/
+dist/js/
 bower_components/
 package-lock.json
 TODO
