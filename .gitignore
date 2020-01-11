@@ -9,5 +9,6 @@
 ad.js
 /dist/
 /bower_components/
+/package-lock.json
 TODO
 test.html
