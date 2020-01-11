@@ -268,7 +268,38 @@ module.exports = function (grunt) { // jshint ignore:line
     // After compressing the images in the build/img dir, there is no need
     // for them
     clean: {
-      build: ['build/img/*']
+      build: ['build/img/*'],
+      release: {
+        options: {
+          force : true
+        },
+        src: ['../simo/assets/template/dist', '../simo/assets/template/components', '../simo/assets/template/plugins']
+      }
+    },
+
+    copy: {
+      release: {
+        files : [
+          {
+            expand  : true,
+            cwd     : 'dist',
+            src     : '**',
+            dest    : '../kcx/assets/template/dist/'
+          },
+          {
+            expand  : true,
+            cwd     : 'bower_components',
+            src     : '**',
+            dest    : '../kcx/assets/template/components/'
+          },
+          {
+            expand  : true,
+            cwd     : 'plugins',
+            src     : '**',
+            dest    : '../kcx/assets/template/plugins/'
+          }
+        ]
+      }
     }
   });
 
@@ -299,14 +330,18 @@ module.exports = function (grunt) { // jshint ignore:line
   grunt.loadNpmTasks('grunt-notify');
   // Replace
   grunt.loadNpmTasks('grunt-text-replace');
+  // Copy
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Linting task
   grunt.registerTask('lint', ['jshint', 'csslint', 'bootlint']);
   // JS task
   grunt.registerTask('js', ['concat', 'uglify']);
   // CSS Task
-  grunt.registerTask('css', ['less:development', 'less:production', 'replace']);
+  grunt.registerTask('css', ['less:development', 'less:skins', 'less:production', 'less:minifiedSkins', 'replace']);
 
   // The default task (running 'grunt' in console) is 'watch'
   grunt.registerTask('default', ['watch']);
+
+  grunt.registerTask('release', ['clean:release', 'copy:release']);
 };
